@@ -21,9 +21,7 @@
  */
 #pragma once
 
-#if NOT_TARGET(__STM32F1__)
-  #error "Oops! Select an STM32F1 board in 'Tools > Board.'"
-#endif
+#include "env_validate.h"
 
 /**
  * 2017 Victor Perez Marlin for stm32f1 test
@@ -134,13 +132,9 @@
 #define W25QXX_SCK_PIN                      PB13
 
 //
-// TronXY TFT Support
+// TFT with FSMC interface
 //
-
 #if HAS_FSMC_TFT
-
-  // Shared FSMC
-
   #define TOUCH_CS_PIN                      PB7   // SPI1_NSS
   #define TOUCH_SCK_PIN                     PA5   // SPI1_SCK
   #define TOUCH_MISO_PIN                    PA6   // SPI1_MISO
@@ -154,7 +148,6 @@
   #define FSMC_RS_PIN                       PD11
   #define FSMC_DMA_DEV                      DMA2
   #define FSMC_DMA_CHANNEL               DMA_CH5
-
 #endif
 
 #if ENABLED(TFT_LVGL_UI)
@@ -167,33 +160,16 @@
   #define HAS_LOGO_IN_FLASH                    0
 #elif ENABLED(TFT_COLOR_UI)
   // Color UI
-  #define TFT_DRIVER                     ILI9488
   #define TFT_BUFFER_SIZE                  14400
-#endif
-
-// XPT2046 Touch Screen calibration
-#if ANY(TFT_LVGL_UI, TFT_COLOR_UI, TFT_CLASSIC_UI)
-  #ifndef TOUCH_CALIBRATION_X
-    #define TOUCH_CALIBRATION_X           -17181
-  #endif
-  #ifndef TOUCH_CALIBRATION_Y
-    #define TOUCH_CALIBRATION_Y            11434
-  #endif
-  #ifndef TOUCH_OFFSET_X
-    #define TOUCH_OFFSET_X                   501
-  #endif
-  #ifndef TOUCH_OFFSET_Y
-    #define TOUCH_OFFSET_Y                    -9
-  #endif
 #endif
 
 // SPI1(PA7)=LCD & SPI3(PB5)=STUFF, are not available
 // so SPI2 is required.
 #define SPI_DEVICE                             2
-#define SCK_PIN                             PB13
-#define MISO_PIN                            PB14
-#define MOSI_PIN                            PB15
-#define SS_PIN                              PB12
+#define SD_SCK_PIN                          PB13
+#define SD_MISO_PIN                         PB14
+#define SD_MOSI_PIN                         PB15
+#define SD_SS_PIN                           PB12
 
 //
 // SD Card
