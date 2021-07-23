@@ -1138,10 +1138,10 @@
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (133*60)
+#define XY_PROBE_FEEDRATE (133*80)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (4*70)
+#define Z_PROBE_FEEDRATE_FAST (4*90)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST)
@@ -1541,7 +1541,7 @@
 
   // Set the number of grid points per dimension.
 //#define GRID_MAX_POINTS_X 5
-  #define GRID_MAX_POINTS_X 4
+  #define GRID_MAX_POINTS_X 6
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
