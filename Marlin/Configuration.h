@@ -577,8 +577,7 @@
 #define TEMP_CHAMBER_HYSTERESIS      3  // (°C) Temperature proximity considered "close enough" to the target
 
 /**
- * Redundant Temperature Sensor (TEMP_SENSOR_REDUNDANT)
- * Redundant Temperature Sensor (TEMP_SENSOR_REDUNDANbltouvh
+ * Redundant Temperature Sensor (TEMP_SENSOR_REDUNDANANT)
  *
  * Use a temp sensor as a redundant sensor for another reading. Select an unused temperature sensor, and another
  * sensor you'd like it to be redundant for. If the two thermistors differ by TEMP_SENSOR_REDUNDANT_MAX_DIFF (°C),
